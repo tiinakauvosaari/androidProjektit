@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/numberSecond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="79dp"
+        android:ems="10"
+        android:hint="Add number"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/buttonMultiple"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.572"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numberFirst" />
+
+    <EditText
+        android:id="@+id/numberFirst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:ems="10"
+        android:hint="Add number"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.572"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonPlus"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:onClick="addNumbers"
+        android:text="+"
+        app:layout_constraintEnd_toStartOf="@+id/buttonMinus"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numberSecond"
+        app:strokeColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/buttonDivide"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="52dp"
+        android:onClick="fractionNumbers"
+        android:text="/"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numberSecond" />
+
+    <Button
+        android:id="@+id/buttonMinus"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="44dp"
+        android:onClick="minusNumbers"
+        android:text="-"
+        app:layout_constraintEnd_toStartOf="@+id/buttonMultiple"
+        app:layout_constraintTop_toBottomOf="@+id/numberSecond" />
+
+    <Button
+        android:id="@+id/buttonMultiple"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="36dp"
+        android:onClick="multiplyNumbers"
+        android:text="X"
+        app:layout_constraintEnd_toStartOf="@+id/buttonDivide"
+        app:layout_constraintTop_toBottomOf="@+id/numberSecond" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMinus"
+        app:layout_constraintVertical_bias="0.225"
+        tools:text="Result" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
