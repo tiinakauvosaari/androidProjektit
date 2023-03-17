@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         number1 = findViewById(R.id.numberFirst);
         number2 = findViewById(R.id.numberSecond);
+
         result = findViewById(R.id.textView);
      }
 
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         number1Int =  Integer.parseInt(number1.getText().toString());
         number2Int =  Integer.parseInt(number2.getText().toString());
         resultInt = number1Int + number2Int;
-        result.setText("Summa on " + resultInt);
+        result.setText("" + resultInt);
     }
 
     public void minusNumbers(View view){
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         number1Int =  Integer.parseInt(number1.getText().toString());
         number2Int =  Integer.parseInt(number2.getText().toString());
         resultInt = number1Int - number2Int;
-        result.setText("Erotus on " + resultInt);
+        result.setText("" +resultInt);
     }
 
     public void multiplyNumbers(View view){
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         number1Int =  Integer.parseInt(number1.getText().toString());
         number2Int =  Integer.parseInt(number2.getText().toString());
         resultInt = number1Int * number2Int;
-        result.setText("Tulo on " + resultInt);
+        result.setText("" + resultInt);
     }
     public void fractionNumbers(View view){
 
@@ -56,6 +57,6 @@ public class MainActivity extends AppCompatActivity {
         double resultDouble = number1D / number2D;
 
         DecimalFormat df = new DecimalFormat("#.##");
-        result.setText("Osamäärä on " + df.format(resultDouble));
+        result.setText("" + df.format(resultDouble));
     }
 }
