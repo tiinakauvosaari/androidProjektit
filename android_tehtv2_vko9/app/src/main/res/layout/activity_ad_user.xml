@@ -4,19 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
     tools:context=".activity_adUser">
 
     <EditText
         android:id="@+id/adUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="40dp"
         android:ems="10"
         android:hint="Etunimi"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/adUserLastname"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,94 +23,112 @@
         android:id="@+id/adUserLastname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
         android:hint="Sukunimi"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/adUserEmail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/adUserName" />
 
     <EditText
         android:id="@+id/adUserEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_width="215dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Kirjoita sähköpostiosoite"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/adUserLastname" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/adUserInformation"
+        android:layout_width="212dp"
+        android:layout_height="185dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/adUserEmail">
 
         <RadioButton
             android:id="@+id/rb_tietotekniikka"
-            android:layout_width="191dp"
+            android:layout_width="match_parent"
             android:layout_height="42dp"
             android:text="Tietotekniikka" />
 
         <RadioButton
+            android:id="@+id/rb_sahkotekniikkaa"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:text="Sähkötekniikka" />
+
+        <RadioButton
             android:id="@+id/rb_laskennallinenTekniikka"
-            android:layout_width="189dp"
+            android:layout_width="match_parent"
             android:layout_height="47dp"
             android:text="Laskennallinen tekniikka" />
 
         <RadioButton
             android:id="@+id/rb_tuotantotalous"
-            android:layout_width="191dp"
+            android:layout_width="match_parent"
             android:layout_height="41dp"
-            android:layout_marginBottom="4dp"
             android:text="Tuotantotalous" />
 
-        <RadioButton
-            android:id="@+id/rb_sahkotekniikkaa"
-            android:layout_width="191dp"
-            android:layout_height="41dp"
-            android:text="Sähkötekniikka" />
+    </RadioGroup>
 
+    <RadioGroup
+        android:id="@+id/radioGroupPicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/adUserInformation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup">
+
+        <RadioButton
+            android:id="@+id/rbP1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableBottom="@drawable/picture3" />
+
+        <RadioButton
+            android:id="@+id/rbP2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableBottom="@drawable/picture4"
+            android:text="2" />
     </RadioGroup>
 
     <Button
         android:id="@+id/adUserInformation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="40dp"
         android:onClick="addUser"
         android:text="Lisää käyttäjä"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintHorizontal_bias="0.778"
+        app:layout_constraintStart_toEndOf="@+id/backButton" />
 
     <Button
         android:id="@+id/backButton"
         android:layout_width="68dp"
         android:layout_height="48dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/white"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="40dp"
+        android:background="@color/teal_700"
         android:backgroundTint="#F4F4F4"
         android:onClick="switchToMain"
         app:icon="@android:drawable/ic_menu_revert"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.111"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adUserInformation"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintEnd_toStartOf="@+id/adUserInformation"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

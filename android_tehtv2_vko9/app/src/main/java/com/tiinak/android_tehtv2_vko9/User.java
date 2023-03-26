@@ -11,27 +11,24 @@ public class User implements Serializable {
     protected String email;
     protected String degreeProgram;
 
+    protected int pictureNumber;
+
     protected int image;
 
 
-    public User(String firstName, String lastName, String email, String degreeProgram) {
+    public User(String firstName, String lastName, String email, String degreeProgram, int pictureNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.degreeProgram = degreeProgram;
-        if(degreeProgram == "Tuotantotalous"){
+        this.pictureNumber = pictureNumber;
+
+        if(pictureNumber == 1){
             image = R.drawable.picture4;
         }
-        else if(degreeProgram == "laskennallinen tekniikka"){
-            image = R.drawable.picture1;
-        }
-        else if(degreeProgram == "Tietotekniikka"){
+        else if(pictureNumber == 2){
             image = R.drawable.picture3;
         }
-        else if(degreeProgram == "Sähkötekniikka"){
-            image = R.drawable.picture2;
-        }
-
     }
 
     public String getFirstName(){

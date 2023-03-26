@@ -15,11 +15,14 @@ public class activity_adUser extends AppCompatActivity {
     protected  EditText email;
 
     protected RadioGroup rg;
+    protected RadioGroup rgPicture;
     protected  String suuntaus;
 
     protected String firstname;
     protected String lastname;
     protected String eemail;
+
+    protected int picture;
 
 
     @Override
@@ -31,6 +34,7 @@ public class activity_adUser extends AppCompatActivity {
         lastName = findViewById(R.id.adUserLastname);
         email = findViewById(R.id.adUserEmail);
         rg = findViewById(R.id.radioGroup);
+        rgPicture = findViewById(R.id.radioGroupPicture);
     }
 
     public void addUser(View view){
@@ -53,12 +57,21 @@ public class activity_adUser extends AppCompatActivity {
                 suuntaus = "Tuotantotalous";
                 break;
             }
-        UserStorage.getInstance().addUser(new User(firstname, lastname, eemail, suuntaus));
+
+        switch(rgPicture.getCheckedRadioButtonId()){
+             case R.id.rbP1:
+                picture = 1;
+                break;
+            case R.id.rbP2:
+                picture = 2;
+                break;
+         }
+        UserStorage.getInstance().addUser(new User(firstname, lastname, eemail, suuntaus, picture));
         firstName.getText().clear();
         lastName.getText().clear();
         email.getText().clear();
+        rgPicture.clearCheck();
         rg.clearCheck();
-
     }
 
     public void switchToMain (View view) {
