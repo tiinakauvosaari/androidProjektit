@@ -66,7 +66,7 @@ public class activity_adUser extends AppCompatActivity {
                 picture = 2;
                 break;
          }
-        UserStorage.getInstance().addUser(new User(firstname, lastname, eemail, suuntaus, picture));
+        UserStorage.getInstance().addUser(new UserListAdapter.User(firstname, lastname, eemail, suuntaus, picture));
         firstName.getText().clear();
         lastName.getText().clear();
         email.getText().clear();

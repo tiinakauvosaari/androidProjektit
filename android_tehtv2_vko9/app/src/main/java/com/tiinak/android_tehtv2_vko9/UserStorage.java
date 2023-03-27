@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class UserStorage {
 
-    private ArrayList<User> users = new ArrayList<>();
+    private ArrayList<UserListAdapter.User> users = new ArrayList<>();
     private static UserStorage userstorage = null;
 
     private UserStorage(){
@@ -15,11 +15,11 @@ public class UserStorage {
         return userstorage;
     }
 
-    public void addUser(User user){
+    public void addUser(UserListAdapter.User user){
         users.add(user);
     }
 
-    public ArrayList<User> getUsers() {
+    public ArrayList<UserListAdapter.User> getUsers() {
         return users;
     }
 }
