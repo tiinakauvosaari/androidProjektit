@@ -5,8 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class activity_adUser extends AppCompatActivity {
 
@@ -22,8 +26,13 @@ public class activity_adUser extends AppCompatActivity {
     protected String lastname;
     protected String eemail;
 
+    protected String tutkinto1, tutkinto2, tutkinto3, tutkinto4;
+
     protected int picture;
 
+    protected CheckBox ctohtori, cmaisteri, ckandi, cuimari;
+
+    protected String tutkinnot = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +44,10 @@ public class activity_adUser extends AppCompatActivity {
         email = findViewById(R.id.adUserEmail);
         rg = findViewById(R.id.radioGroup);
         rgPicture = findViewById(R.id.radioGroupPicture);
+        ctohtori= findViewById(R.id.cboxTohtori);
+        cmaisteri= findViewById(R.id.cboxMaisteri);
+        ckandi= findViewById(R.id.cboxKandi);
+        cuimari= findViewById(R.id.cboxUimari);
     }
 
     public void addUser(View view){
@@ -66,12 +79,37 @@ public class activity_adUser extends AppCompatActivity {
                 picture = 2;
                 break;
          }
-        UserStorage.getInstance().addUser(new UserListAdapter.User(firstname, lastname, eemail, suuntaus, picture));
+
+         if (ctohtori.isChecked()) {
+                tutkinnot = tutkinnot + " -Tekniikan tohtorin tutkinto";
+                tutkinnot = tutkinnot + "\n";
+             }
+         if (cmaisteri.isChecked()) {
+                tutkinnot = tutkinnot + " -Diplomi-insinöörin tutkinto";
+                tutkinnot = tutkinnot + "\n";
+            }
+         if (ckandi.isChecked()) {
+                tutkinnot = tutkinnot + " -Kandidaatin tutkinto";
+                tutkinnot = tutkinnot + "\n";
+             }
+         if (cuimari.isChecked()) {
+                tutkinnot = tutkinnot + " -Uimamaisteri";
+                tutkinnot = tutkinnot + "\n";
+             }
+
+
+        UserStorage.getInstance().addUser(new UserListAdapter.User(firstname, lastname, eemail, suuntaus, picture, tutkinnot));
         firstName.getText().clear();
         lastName.getText().clear();
         email.getText().clear();
         rgPicture.clearCheck();
         rg.clearCheck();
+        tutkinnot ="";
+        cuimari.setChecked(false);
+        ctohtori.setChecked(false);
+        cmaisteri.setChecked(false);
+        ckandi.setChecked(false);
+
     }
 
     public void switchToMain (View view) {

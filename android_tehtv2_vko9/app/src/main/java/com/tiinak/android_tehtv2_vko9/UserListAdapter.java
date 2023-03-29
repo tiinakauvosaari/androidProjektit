@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class UserListAdapter extends RecyclerView.Adapter<UserViewHolder> {
 
@@ -28,11 +30,11 @@ public class UserListAdapter extends RecyclerView.Adapter<UserViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
-        holder.userName.setText(users.get(position).getFirstName() + " " + users.get(position).getLastName() );
-        //holder.userLastName.setText(users.get(position).getLastName());
+        holder.userName.setText(users.get(position).getFirstName() + " " + users.get(position).getLastName());
         holder.email.setText(users.get(position).getEmail());
         holder.suuntaus.setText(users.get(position).getDegreeProgram());
         holder.image.setImageResource(users.get(position).getImage());
+        holder.tutkinto1.setText(users.get(position).getTutkinto());
     }
 
     @Override
@@ -47,43 +49,51 @@ public class UserListAdapter extends RecyclerView.Adapter<UserViewHolder> {
         protected String email;
         protected String degreeProgram;
 
+        //protected String tutkinto1, tutkinto2, tutkinto3, tutkinto4;
+
         protected int pictureNumber;
 
         protected int image;
 
+        protected String tutkinnot;
 
-        public User(String firstName, String lastName, String email, String degreeProgram, int pictureNumber) {
+        public User(String firstName, String lastName, String email, String degreeProgram, int pictureNumber, String tutkinnot) {
             this.firstName = firstName;
             this.lastName = lastName;
             this.email = email;
             this.degreeProgram = degreeProgram;
             this.pictureNumber = pictureNumber;
+            this.tutkinnot = tutkinnot;
 
-            if(pictureNumber == 1){
+            if (pictureNumber == 1) {
                 image = R.drawable.picture3;
-            }
-            else if(pictureNumber == 2){
+            } else if (pictureNumber == 2) {
                 image = R.drawable.picture4;
             }
-
         }
 
-        public String getFirstName(){
+        public String getFirstName() {
             return firstName;
         }
-        public String getLastName(){
+
+        public String getLastName() {
             return lastName;
         }
-        public String getEmail(){
+
+        public String getEmail() {
             return email;
         }
 
-        public String getDegreeProgram(){
+        public String getDegreeProgram() {
             return degreeProgram;
         }
 
         public int getImage() {
             return image;
+        }
+
+        public String getTutkinto() {
+             return tutkinnot;
         }
     }
 }
