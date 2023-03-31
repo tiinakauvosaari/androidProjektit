@@ -2,6 +2,7 @@ package com.tiinak.android_tehtv2_vko9;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,8 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,8 +28,6 @@ public class activity_adUser extends AppCompatActivity {
     protected String firstname;
     protected String lastname;
     protected String eemail;
-
-    protected String tutkinto1, tutkinto2, tutkinto3, tutkinto4;
 
     protected int picture;
 
@@ -50,16 +51,16 @@ public class activity_adUser extends AppCompatActivity {
         cuimari= findViewById(R.id.cboxUimari);
     }
 
-    public void addUser(View view){
+    public void addUser(View view) {
 
         firstname = "" + firstName.getText().toString();
         lastname = "" + lastName.getText().toString();
         eemail = "" + email.getText().toString();
 
-        switch(rg.getCheckedRadioButtonId()){
+        switch (rg.getCheckedRadioButtonId()) {
             case R.id.rb_laskennallinenTekniikka:
-                 suuntaus = "laskennallinen tekniikka";
-                 break;
+                suuntaus = "laskennallinen tekniikka";
+                break;
             case R.id.rb_tietotekniikka:
                 suuntaus = "Tietotekniikka";
                 break;
@@ -69,34 +70,33 @@ public class activity_adUser extends AppCompatActivity {
             case R.id.rb_tuotantotalous:
                 suuntaus = "Tuotantotalous";
                 break;
-            }
+        }
 
-        switch(rgPicture.getCheckedRadioButtonId()){
-             case R.id.rbP1:
+        switch (rgPicture.getCheckedRadioButtonId()) {
+            case R.id.rbP1:
                 picture = 1;
                 break;
             case R.id.rbP2:
                 picture = 2;
                 break;
-         }
+        }
 
-         if (ctohtori.isChecked()) {
-                tutkinnot = tutkinnot + " -Tekniikan tohtorin tutkinto";
-                tutkinnot = tutkinnot + "\n";
-             }
-         if (cmaisteri.isChecked()) {
-                tutkinnot = tutkinnot + " -Diplomi-insinöörin tutkinto";
-                tutkinnot = tutkinnot + "\n";
-            }
-         if (ckandi.isChecked()) {
-                tutkinnot = tutkinnot + " -Kandidaatin tutkinto";
-                tutkinnot = tutkinnot + "\n";
-             }
-         if (cuimari.isChecked()) {
-                tutkinnot = tutkinnot + " -Uimamaisteri";
-                tutkinnot = tutkinnot + "\n";
-             }
-
+        if (ctohtori.isChecked()) {
+            tutkinnot = tutkinnot + " -Tekniikan tohtorin tutkinto";
+            tutkinnot = tutkinnot + "\n";
+        }
+        if (cmaisteri.isChecked()) {
+            tutkinnot = tutkinnot + " -Diplomi-insinöörin tutkinto";
+            tutkinnot = tutkinnot + "\n";
+        }
+        if (ckandi.isChecked()) {
+            tutkinnot = tutkinnot + " -Kandidaatin tutkinto";
+            tutkinnot = tutkinnot + "\n";
+        }
+        if (cuimari.isChecked()) {
+            tutkinnot = tutkinnot + " -Uimamaisteri";
+            tutkinnot = tutkinnot + "\n";
+        }
 
         UserStorage.getInstance().addUser(new UserListAdapter.User(firstname, lastname, eemail, suuntaus, picture, tutkinnot));
         firstName.getText().clear();
@@ -104,15 +104,17 @@ public class activity_adUser extends AppCompatActivity {
         email.getText().clear();
         rgPicture.clearCheck();
         rg.clearCheck();
-        tutkinnot ="";
+        tutkinnot = "";
         cuimari.setChecked(false);
         ctohtori.setChecked(false);
         cmaisteri.setChecked(false);
         ckandi.setChecked(false);
 
+        UserStorage.getInstance().saveUsers(this);
     }
 
     public void switchToMain (View view) {
+
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
     }

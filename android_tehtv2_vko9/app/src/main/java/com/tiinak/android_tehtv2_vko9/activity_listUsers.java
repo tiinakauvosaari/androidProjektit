@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.os.Bundle;
 
 public class activity_listUsers extends AppCompatActivity {
@@ -15,7 +16,6 @@ public class activity_listUsers extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_users);
-
         storage = UserStorage.getInstance();
         recyclerView = findViewById(R.id.rvUserList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

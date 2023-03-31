@@ -8,11 +8,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class UserViewHolder extends RecyclerView.ViewHolder {
-
     ImageView image;
     TextView userName, email, suuntaus, tutkinto1;
 
-    public UserViewHolder(@NonNull View itemView) {
+    public UserViewHolder(View itemView) {
         super(itemView);
         image = itemView.findViewById(R.id.userImage);
         userName = itemView.findViewById(R.id.nameView);

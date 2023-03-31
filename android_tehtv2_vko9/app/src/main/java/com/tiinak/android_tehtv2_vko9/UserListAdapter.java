@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class UserListAdapter extends RecyclerView.Adapter<UserViewHolder> {
@@ -22,14 +23,14 @@ public class UserListAdapter extends RecyclerView.Adapter<UserViewHolder> {
         this.users = users;
     }
 
-    @NonNull
     @Override
-    public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public UserViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new UserViewHolder(LayoutInflater.from(context).inflate(R.layout.user_view, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
+    public void onBindViewHolder(UserViewHolder holder, int position) {
+
         holder.userName.setText(users.get(position).getFirstName() + " " + users.get(position).getLastName());
         holder.email.setText(users.get(position).getEmail());
         holder.suuntaus.setText(users.get(position).getDegreeProgram());
@@ -48,8 +49,6 @@ public class UserListAdapter extends RecyclerView.Adapter<UserViewHolder> {
         protected String lastName;
         protected String email;
         protected String degreeProgram;
-
-        //protected String tutkinto1, tutkinto2, tutkinto3, tutkinto4;
 
         protected int pictureNumber;
 
@@ -93,7 +92,12 @@ public class UserListAdapter extends RecyclerView.Adapter<UserViewHolder> {
         }
 
         public String getTutkinto() {
-             return tutkinnot;
+            return tutkinnot;
         }
+
+
+
     }
+
+
 }
