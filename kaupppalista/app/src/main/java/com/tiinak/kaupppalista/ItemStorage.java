@@ -40,10 +40,13 @@ public class ItemStorage {
             i++;
         }
         items.remove(i);
-
     }
 
-    public ItemListAdapter.Item getItembyName(int pos) {
+    public ItemListAdapter.Item getItemName(int pos) {
+        return items.get(pos);
+    }
+
+    public ItemListAdapter.Item getItemExtra(int pos) {
         return items.get(pos);
     }
 }

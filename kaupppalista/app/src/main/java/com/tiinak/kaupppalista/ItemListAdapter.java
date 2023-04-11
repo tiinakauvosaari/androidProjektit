@@ -14,7 +14,8 @@ import java.util.ArrayList;
 public class ItemListAdapter extends RecyclerView.Adapter<ItemviewHolder> {
 
     private Context context;
-    private ArrayList<Item> items = new ArrayList<>();
+
+    private ArrayList<Item> items;
 
     public ItemListAdapter(Context context, ArrayList<Item> items) {
         this.context = context;
@@ -32,6 +33,7 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemviewHolder> {
         holder.item.setText(items.get(position).getItemName());
         holder.itemexta.setText(items.get(position).getItemextra());
         holder.editName.setText(items.get(position).getItemName());
+        holder.editExtra.setText(items.get(position).getItemextra());
 
         holder.removeItem.setOnClickListener(view -> {
             int pos = holder.getAdapterPosition();
@@ -42,17 +44,18 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemviewHolder> {
         holder.editItem.setOnClickListener(view -> {
             int pos = holder.getAdapterPosition();
             if(holder.editName.getVisibility() == View.VISIBLE){
-             //  Item item =  ItemStorage.getInstance().getItemName();
-             //   item.setName(item);
-
-                //Laita tämä lopuksi:
-               // holder.editName.setVisibility(View.GONE);
-
+               Item item =  ItemStorage.getInstance().getItemName(pos);
+               Item item2 =  ItemStorage.getInstance().getItemExtra(pos);
+               item.setName(holder.editName.getText().toString());
+               item2.setExtra(holder.editExtra.getText().toString());
+               holder.editName.setVisibility(View.GONE);
+               holder.editExtra.setVisibility(View.GONE);
+               notifyDataSetChanged();
             }
             else{
                 holder.editName.setVisibility(View.VISIBLE);
+                holder.editExtra.setVisibility(View.VISIBLE);
             }
-
         });
     }
 
@@ -83,6 +86,9 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemviewHolder> {
         public void setName(String name) {
             this.itemName = name;
         }
+
+        public void setExtra(String extra) { this.itemextra = extra; }
+
     }
 }
 

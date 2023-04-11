@@ -12,8 +12,11 @@ import android.view.View;
 public class MainActivity extends AppCompatActivity {
 
     ItemStorage storage = ItemStorage.getInstance();
-    ItemListAdapter.Item item = null;
-    protected Context context;
+
+    //ItemListAdapter.Item item = null;
+
+
+    //protected Context context;
     private RecyclerView recyclerView;
 
     @Override

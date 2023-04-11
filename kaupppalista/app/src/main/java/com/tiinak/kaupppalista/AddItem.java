@@ -10,10 +10,9 @@ import androidx.appcompat.app.AppCompatActivity;
 public class AddItem extends AppCompatActivity{
 
     protected EditText newitem;
-    protected EditText newitemextra;
-
+    protected EditText newitemextra; //lisätieto
     protected String newitemString;
-    protected String newitemextraString;
+    protected String newitemextraString;  //lisätieto string - muodossa
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

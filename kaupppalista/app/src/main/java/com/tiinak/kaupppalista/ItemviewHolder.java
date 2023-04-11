@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class ItemviewHolder extends RecyclerView.ViewHolder {
-    TextView item, itemexta, editName;
+    TextView item, itemexta, editName, editExtra;
     ImageView removeItem, editItem;
 
 
@@ -19,5 +19,6 @@ public class ItemviewHolder extends RecyclerView.ViewHolder {
         removeItem = itemView.findViewById(R.id.imageDelete);
         editItem = itemView.findViewById(R.id.imageEdit);
         editName = itemView.findViewById(R.id.editItem);
+        editExtra = itemView.findViewById(R.id.editItemExtra);
     }
 }

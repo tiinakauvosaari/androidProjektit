@@ -1,59 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/oneitem"
     android:layout_width="wrap_content"
     android:layout_height="100dp"
-    android:layout_marginStart="8dp"
+    android:layout_marginStart="20dp"
     android:layout_marginTop="10dp"
     android:background="#8D88ED8A"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:paddingStart="5dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="100dp"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/item"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="item" />
+            android:layout_height="30dp"
+            android:fontFamily="monospace"
+            android:text="item"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/itemextra"
             android:layout_width="213dp"
-            android:layout_height="384dp"
+            android:layout_height="30dp"
             android:layout_weight="1"
             android:text="." />
+
+        <EditText
+            android:id="@+id/editItem"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="12sp"
+            android:visibility="gone"
+            tools:text="moikka" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:orientation="vertical">
 
         <ImageView
             android:id="@+id/imageDelete"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="3dp"
+            android:layout_height="30dp"
             android:src="@drawable/delete" />
 
         <ImageView
             android:id="@+id/imageEdit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="3dp"
+            android:layout_width="94dp"
+            android:layout_height="30dp"
             android:src="@drawable/change" />
 
         <EditText
-            android:id="@+id/editItem"
+            android:id="@+id/editItemExtra"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:visibility="gone" />
+            android:textSize="12sp"
+            android:visibility="gone"
+            tools:text="Heippa" />
 
     </LinearLayout>
 
