@@ -3,32 +3,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E1C5ED"
+    android:background="#C5E8A5"
     tools:context=".fragments.AdNew">
 
     <EditText
         android:id="@+id/newitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:ems="10"
-        android:hint="Lisää tuote"
-        android:inputType="textPersonName"
-        android:layout_gravity="top|center_horizontal"/>
+        android:layout_marginTop="20dp"
+        android:hint="Lisää tuoteen nimi"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/newitemextra"
-        android:layout_width="166dp"
-        android:layout_height="58dp"
-        android:layout_gravity="center|center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:ems="10"
-        android:hint="Lisätieto"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        android:hint="lisätieto"
+        android:layout_marginTop="70dp"
+        android:inputType="textPersonName" />
+
+    <CheckBox
+        android:id="@+id/superimportant"
+        android:layout_width="wrap_content"
+        android:layout_height="97dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        android:text="Supertärkeä ostos" />
 
     <Button
         android:id="@+id/adnewitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lisää tuote"
-        android:layout_gravity="bottom|center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="200dp"
+        android:text="Lisää tuote" />
+
 </FrameLayout>
