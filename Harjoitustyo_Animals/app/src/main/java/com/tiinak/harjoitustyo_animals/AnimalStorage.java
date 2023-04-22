@@ -22,7 +22,9 @@ public class AnimalStorage {
         animals.add(animal);
     }
 
-
+    public ArrayList<AnimalListAdapter.Animal> getAnimals() {
+        return animals;
+    }
 
 
 }

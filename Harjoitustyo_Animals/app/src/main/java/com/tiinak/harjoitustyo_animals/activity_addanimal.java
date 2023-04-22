@@ -1,5 +1,6 @@
 package com.tiinak.harjoitustyo_animals;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -58,5 +59,8 @@ public class activity_addanimal extends AppCompatActivity {
                 break;
         }
         AnimalStorage.getInstance().addAnimal(new AnimalListAdapter.Animal(nameString, species, attack, defence, maxHealth));
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
+
     }
 }

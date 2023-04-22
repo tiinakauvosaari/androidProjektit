@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="8dp"
+    android:background="#EDF3B4"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/animalImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/btn_star_big_on" />
+
+    <LinearLayout
+        android:layout_width="160dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nameView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nimi"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/attackView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="attack" />
+
+        <TextView
+            android:id="@+id/defenceView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Defence" />
+
+        <TextView
+            android:id="@+id/maxHealth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="maxHealth" />
+
+        <TextView
+            android:id="@+id/id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Parctis" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="160dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/speciesView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="spceies" />
+
+        <TextView
+            android:id="@+id/WinningsNumberView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="WinningsNumber" />
+
+        <TextView
+            android:id="@+id/practisView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Parctis" />
+
+        <TextView
+            android:id="@+id/attackNumberView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="attackNumber" />
+
+    </LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
+
