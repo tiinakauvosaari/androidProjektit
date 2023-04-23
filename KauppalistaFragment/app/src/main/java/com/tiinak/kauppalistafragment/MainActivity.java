@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
         MainActivityAdapter mainActivityadapter = new MainActivityAdapter(this);
         fragmentarea.setAdapter(mainActivityadapter);
 
-    }
         private View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {

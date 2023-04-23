@@ -33,11 +33,11 @@ public class itemListAdapter extends RecyclerView.Adapter<ItemviewHolder> {
         holder.editName.setText(items.get(position).getItemName());
         holder.editExtra.setText(items.get(position).getItemextra());
 
-        holder.removeItem.setOnClickListener(view -> {
-            int pos = holder.getAdapterPosition();
-            ItemStorage.getInstance().removeItem(items.get(pos).getItemName());
-            notifyItemRemoved(pos);
-        });
+       // holder.removeItem.setOnClickListener(view -> {
+       //     int pos = holder.getAdapterPosition();
+       //     ItemStorage.getInstance().removeItem(items.get(pos).getItemName());
+       //     notifyItemRemoved(pos);
+      //  });
 
         holder.editItem.setOnClickListener(view -> {
             int pos = holder.getAdapterPosition();

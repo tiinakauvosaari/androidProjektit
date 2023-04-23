@@ -7,12 +7,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class AnimalViewHolder extends RecyclerView.ViewHolder{
 
-       // ImageView image;
+        ImageView image;
         TextView name, species, attack, defense, maxHealth, practise, winningsNumber, attacksNumber, id;
 
         public AnimalViewHolder(View itemView) {
             super(itemView);
-            //image = itemView.findViewById(R.id.);
+            image = itemView.findViewById(R.id.animalImage);
             name = itemView.findViewById(R.id.nameView);
             species = itemView.findViewById(R.id.speciesView);
             attack = itemView.findViewById(R.id.attackView);

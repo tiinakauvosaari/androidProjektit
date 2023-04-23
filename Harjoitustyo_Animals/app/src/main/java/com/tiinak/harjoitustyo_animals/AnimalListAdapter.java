@@ -7,8 +7,9 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Objects;
 
-public class AnimalListAdapter extends RecyclerView.Adapter<AnimalViewHolder>  {
+public class AnimalListAdapter extends RecyclerView.Adapter<AnimalViewHolder> {
 
     private Context context;
     private ArrayList<Animal> animals;
@@ -28,15 +29,15 @@ public class AnimalListAdapter extends RecyclerView.Adapter<AnimalViewHolder>  {
     public void onBindViewHolder(AnimalViewHolder holder, int position) {
 
         holder.name.setText(animals.get(position).getName());
-        holder.species.setText(animals.get(position).getSpecies());
-        holder.attack.setText("Attack: " +animals.get(position).getAttack());
-        holder.maxHealth.setText("maxHealth "+animals.get(position).getMaxHealth());
-        holder.defense.setText("Defence: " +animals.get(position).getDefence());
-        holder.practise.setText("Practise: "+animals.get(position).getPractise());
-        holder.winningsNumber.setText("Vinnings: "+animals.get(position).getWinningsNumber());
-        holder.attacksNumber.setText("Attacks: "+animals.get(position).getAttacksNumber());
-        holder.id.setText("id: "+ animals.get(position).getId());
-       // holder.attacksNumber.setImageResource(users.get(position).getImage());
+        holder.species.setText("Species: " + animals.get(position).getSpecies());
+        holder.attack.setText("Attack: " + animals.get(position).getAttack());
+        holder.maxHealth.setText("maxHealth " + animals.get(position).getMaxHealth());
+        holder.defense.setText("Defence: " + animals.get(position).getDefence());
+        holder.practise.setText("Practise: " + animals.get(position).getPractise());
+        holder.winningsNumber.setText("Winnings: " + animals.get(position).getWinningsNumber());
+        holder.attacksNumber.setText("Attacks: " + animals.get(position).getAttacksNumber());
+        holder.id.setText("id: " + animals.get(position).getId());
+        holder.image.setImageResource(animals.get(position).getImage());
     }
 
     @Override
@@ -45,70 +46,91 @@ public class AnimalListAdapter extends RecyclerView.Adapter<AnimalViewHolder>  {
     }
 
     public static class Animal implements Serializable {
+        protected String name;
+        protected String species;
+        protected int attack;
+        protected int defence;
+        protected int maxHealth;
+        protected int practise;
+        protected int winningsNumber;
+        protected int attacksNumber;
+        protected int id;
+        protected int image;
 
-            protected String name;
-            protected String species;
-            protected int attack;
-            protected int defence;
-            protected int maxHealth;
-            protected int practise;
-            protected int winningsNumber;
-            protected int attacksNumber;
-            protected int id;
+        protected int i = 0;
 
-            protected int i = 0;
+        static int count = 0;
 
-            public Animal(String name, String species,int attack, int defence, int maxHealth) {
-                this.name = name;
-                this.species = species;
-                this.attack = attack;
-                this.defence = defence;
-                this.maxHealth = maxHealth;
-                this.practise = 0;
-                this.attacksNumber = 0;
-                this.winningsNumber = 0;
-                this.id = idCounter();
+        public Animal(String name, String species, int attack, int defence, int maxHealth) {
+            this.name = name;
+            this.species = species;
+            this.attack = attack;
+            this.defence = defence;
+            this.maxHealth = maxHealth;
+            this.practise = 0;
+            this.attacksNumber = 0;
+            this.winningsNumber = 0;
+            this.id = this.idCounter();
+
+            if (species.equals("lion")) {
+                image = R.drawable.lion;
+            } else if (species.equals("mouse")) {
+                image = R.drawable.mouse;
+            } else if (species.equals("owl")) {
+                image = R.drawable.owl;
+            } else if (species.equals("rhino")) {
+                image = R.drawable.rhino;
+            } else if (species.equals("snail")) {
+                image = R.drawable.snail;
+            } else if (species.equals("crocodile")) {
+                image = R.drawable.crocodile;
             }
+        }
 
-            public String getName() {
-                return name;
-            }
+        public String getName() {
+            return name;
+        }
 
-            public String getSpecies() {
-                return species;
-            }
+        public String getSpecies() {
+            return species;
+        }
 
-            public int getAttack() {
-                return attack;
-            }
+        public int getAttack() {
+            return attack;
+        }
 
-            public int getDefence() {
-                return defence;
-            }
+        public int getDefence() {
+            return defence;
+        }
 
-            public int getMaxHealth() {
+        public int getMaxHealth() {
             return maxHealth;
-            }
+        }
 
-            public int getAttacksNumber() {
+        public int getAttacksNumber() {
             return attacksNumber;
-            }
+        }
 
-            public int getPractise() {
+        public int getPractise() {
             return practise;
-            }
+        }
 
-            public int getWinningsNumber() {
+        public int getWinningsNumber() {
             return winningsNumber;
-            }
+        }
 
-            public int getId() {
+        public int getId() {
             return id;
-            }
+        }
 
-            private int idCounter(){
-                return 3;
-            }
-       }
+        public int getImage() {
+            return image;
+        }
+
+        static int idCounter(){
+            return count++;
+         }
+     }
+
 }
 
