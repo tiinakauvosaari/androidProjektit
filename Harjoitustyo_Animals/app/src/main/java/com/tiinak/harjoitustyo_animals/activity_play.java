@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager2.widget.ViewPager2;
 import com.google.android.material.tabs.TabLayout;
 
@@ -20,12 +21,7 @@ public class activity_play extends AppCompatActivity {
         ActivityPlayAdapter playactivityadapter = new ActivityPlayAdapter(this);
         fragmentarea.setAdapter(playactivityadapter);
 
-    // View.OnClickListener listener = new View.OnClickListener() {
-     //   @Override
-      //  public void onClick(View view) {
-           //Fragment fragment;
-
-            tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
 
                 @Override
                 public void onTabSelected(TabLayout.Tab tab) {
@@ -41,10 +37,21 @@ public class activity_play extends AppCompatActivity {
                 }
             });
 
-            //getSupportFragmentManager().beginTransaction()
-               //     .replace(R.id.frame, fragment)
-                //    .commit();
+        fragmentarea.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                tabLayout.getTabAt(position).select();
+            }
+        });
 
-        }
-    }
+
+       // FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+       // ft.replace(R.id.frame, fragment);
+      //  ft.commit();
+
+    }}
+
+
+
 
