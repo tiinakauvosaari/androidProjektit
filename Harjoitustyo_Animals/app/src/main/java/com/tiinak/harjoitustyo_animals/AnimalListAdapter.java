@@ -129,8 +129,9 @@ public class AnimalListAdapter extends RecyclerView.Adapter<AnimalViewHolder> {
 
         static int idCounter(){
             return count++;
-         }
-     }
+        }
+    }
 
 }
+
 

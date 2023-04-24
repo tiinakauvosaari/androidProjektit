@@ -23,5 +23,4 @@ public class AnimalViewHolder extends RecyclerView.ViewHolder{
             attacksNumber = itemView.findViewById(R.id.attackNumberView);
             id = itemView.findViewById(R.id.id);
         }
-
 }

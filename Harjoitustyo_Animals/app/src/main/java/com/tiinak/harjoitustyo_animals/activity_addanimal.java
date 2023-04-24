@@ -22,7 +22,6 @@ public class activity_addanimal extends AppCompatActivity {
         rg = findViewById(R.id.rg);
     }
 
-
     public void addAnimal(View view) {
 
         nameString = "" + name.getText().toString();

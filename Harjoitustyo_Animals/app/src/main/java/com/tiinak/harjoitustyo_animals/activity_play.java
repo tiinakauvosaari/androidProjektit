@@ -46,8 +46,9 @@ public class activity_play extends AppCompatActivity {
         });
 
 
-       // FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-       // ft.replace(R.id.frame, fragment);
+      // FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+      //  Fragment fragment;
+      //  ft.replace(R.id.frame, fragment);
       //  ft.commit();
 
     }}
