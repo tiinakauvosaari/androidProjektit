@@ -7,6 +7,8 @@ import java.util.ArrayList;
 public class AnimalStorage {
 
     protected ArrayList<AnimalListAdapter.Animal> animals = new ArrayList<>();
+    protected ArrayList<AnimalListAdapter.Animal> animalsTrain = new ArrayList<>();
+    protected ArrayList<AnimalListAdapter.Animal> animalsFight = new ArrayList<>();
     protected static AnimalStorage animalstorage = null;
     protected Context context;
 

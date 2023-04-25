@@ -11,9 +11,12 @@ public class AnimalChoiceHolder extends RecyclerView.ViewHolder{
 
     //TextView name, species;
     RadioButton radiobutton;
+    AnimalChoiceAdapter.AnimalChoice choice;
 
-    public AnimalChoiceHolder(View itemView) {
+
+    public AnimalChoiceHolder(View itemView,AnimalChoiceAdapter.AnimalChoice choice) {
         super(itemView);
+        this.choice = choice;
         radiobutton = itemView.findViewById(R.id.radioButton);
     }
 }
