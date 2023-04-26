@@ -36,19 +36,25 @@ public class AnimalChoiceAdapter extends RecyclerView.Adapter<AnimalChoiceHolder
         holder.radiobutton.setText(animals.get(position).getName() + " (" + animals.get(position).getSpecies() + ")");
         holder.radiobutton.setChecked(position == selectedPosition);
         holder.radiobutton.setTag(position);
-
         holder.radiobutton.setOnCheckedChangeListener(
                 new CompoundButton.OnCheckedChangeListener() {
                     @Override
-                    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                    public void onCheckedChanged(
+                            CompoundButton compoundButton,
+                            boolean b)
+                    {
+                        // check condition
                         if (b) {
+                            // When checked
+                            // update selected position
                             selectedPosition = holder.getAdapterPosition();
-                            itemClickListener.onClick(
-                                    holder.radiobutton.getText().toString());
-                        }
+                            // Call listener
+                            itemClickListener.onClick(holder.radiobutton.getText()
+                                    .toString());
+                            itemClickListener.selectAnimal(animals.get(selectedPosition));
+;                        }
                     }
-                }
-        );
+                });
 
     }
 

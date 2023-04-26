@@ -15,6 +15,8 @@ import java.util.ArrayList;
 public class activity_move_animals extends AppCompatActivity {
 
 
+        private ArrayList<Animal> animalmove = new ArrayList<>();
+        public ArrayList<Animal> animalstrain;
         public ArrayList<Animal> animals;
         protected Button btnTrain;
         protected RecyclerView recyclerView;
@@ -36,21 +38,38 @@ public class activity_move_animals extends AppCompatActivity {
             recyclerView = findViewById(R.id.recycleview);
             btnTrain = findViewById(R.id.btnTrain);
             rg = findViewById(R.id.radioGroup);
-            itemClickListener = new ItemClickListener(){
-                public void onClick(String animal){
-                    recyclerView.post(new Runnable(){
-                        @Override
-                        public void run(){
-                            animalChoiceAdapter.notifyDataSetChanged();
 
-                        }
-
-                    });
+            itemClickListener = new ItemClickListener() {
+                @Override
+                public void onClick(String s) {
+                }
+                @Override
+                public void selectAnimal(Animal animal) {
+                    animalmove.add(animal);
                     Toast
-                            .makeText(getApplicationContext(), "Selected ",
-                                    Toast.LENGTH_SHORT)
-                            .show();
-                }  };
+                            .makeText(getApplicationContext(), "Selected " + animal.getName(),
+                                           Toast.LENGTH_SHORT)
+                                   .show();
+                }
+               };
+
+
+           // itemClickListener = new ItemClickListener(){
+             //   public void onClick(Animal animal){
+                   // animalmove.add(animal);
+                    //recyclerView.post(new Runnable(){
+                     //   @Override
+                     //   public void run(){
+                     //       animalChoiceAdapter.notifyDataSetChanged();
+                    //    }
+
+                   // });
+            //        Toast
+            //                .makeText(getApplicationContext(), "Selected ",
+            //                        Toast.LENGTH_SHORT)
+            //                .show();
+            //    }  };
+
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
             animalChoiceAdapter = new AnimalChoiceAdapter(AnimalStorage.getAnimals(animals),itemClickListener);
             // recyclerView.setAdapter(new AnimalChoiceAdapter(AnimalStorage.getAnimals(animals), itemClickListener));
@@ -62,16 +81,18 @@ public class activity_move_animals extends AppCompatActivity {
                      //Valittu olio
 
 
-                            switch (rg.getCheckedRadioButtonId()) {
-                                case R.id.rbHome:
+                    switch (rg.getCheckedRadioButtonId()) {
+                        case R.id.rbHome:
+
                                     // valittu olio siirretään kotiin
-                                    Toast
-                                            .makeText(getApplicationContext(), "Home selected",
-                                                    Toast.LENGTH_SHORT)
+                            Toast
+                                    .makeText(getApplicationContext(), "Home selected",
+                                            Toast.LENGTH_SHORT)
                                             .show();
                                     break;
-                                case R.id.rbTrain:
-                                    // train
+
+                       case R.id.rbTrain:
+                                    //AnimalStorage.addAnimaltrain(animal);
                                     Toast
                                             .makeText(getApplicationContext(), "Train selected",
                                                     Toast.LENGTH_SHORT)

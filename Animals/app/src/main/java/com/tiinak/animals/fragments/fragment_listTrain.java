@@ -34,7 +34,7 @@ public class fragment_listTrain extends Fragment {
 
             View view = inflater.inflate(R.layout.fragment_list_train, container, false);
             recyclerView = view.findViewById(R.id.recycleviewHome);
-            recyclerView.setHasFixedSize(true);
+           // recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
             recyclerView.setAdapter(new AnimalListAdapter(AnimalStorage.getAnimals(animalsTrain)));
             return view;
