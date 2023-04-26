@@ -1,0 +1,38 @@
+package com.tiinak.animals;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+
+import java.util.ArrayList;
+
+public class MainActivity extends AppCompatActivity {
+
+    Home home = new Home();
+    BattleField battleField = new BattleField();
+    TrainingArea trainingArea = new TrainingArea();
+
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+        }
+
+    public void switchToAddAnimal(View view) {
+        Intent intent = new Intent(this, activity_add_animal.class);
+        startActivity(intent);
+    }
+
+    public void switchToListAnimals(View view) {
+        Intent intent = new Intent(this, activity_list_animals.class);
+        startActivity(intent);
+    }
+
+    public void switchToMoveAnimals(View view) {
+        Intent intent = new Intent(this, activity_move_animals.class);
+        startActivity(intent);
+    }
+
+}

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAEFD6"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="341dp"
+        android:layout_height="122dp"
+        android:capitalize="characters"
+        android:fontFamily="casual"
+        android:freezesText="false"
+        android:gravity="center"
+        android:text="Animals"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="20dp" />
+
+    <Button
+        android:id="@+id/btnCreateNew"
+        android:layout_width="190dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="50dp"
+        android:background="#63B1EA92"
+        android:fadingEdge="horizontal"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:onClick="switchToAddAnimal"
+        android:text="Luo uusi eläin"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <Button
+        android:id="@+id/btnMove"
+        android:layout_width="200dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="20dp"
+        android:background="#63B1EA92"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:onClick="switchToMoveAnimals"
+        android:text="Siirrä eläimiä"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCreateNew" />
+
+
+    <Button
+        android:id="@+id/btnList"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="#63B1EA92"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:onClick="switchToListAnimals"
+        android:text="Listaa"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMove" />
+
+    <Button
+        android:id="@+id/btnPactise"
+        android:layout_width="200dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="20dp"
+        android:background="#63B1EA92"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:onClick="switchToStart"
+        android:text="Harjoittele"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnList" />
+
+    <Button
+        android:id="@+id/btnFight"
+        android:layout_width="200dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="20dp"
+        android:background="#63B1EA92"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:onClick="switchToMove"
+        android:text="Pelaa"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPactise" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

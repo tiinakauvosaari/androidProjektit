@@ -15,7 +15,8 @@ public class activity_moveAnimals extends AppCompatActivity {
     protected RecyclerView recyclerView;
     protected RadioGroup rg;
 
-    AnimalStorage animalstorage = AnimalStorage.getInstance();
+    //AnimalStorage animalstorage = AnimalStorage.getInstance();
+    AnimalStorage animalstorage;
     private Context context;
     private AnimalChoiceAdapter adapterChoice;
 

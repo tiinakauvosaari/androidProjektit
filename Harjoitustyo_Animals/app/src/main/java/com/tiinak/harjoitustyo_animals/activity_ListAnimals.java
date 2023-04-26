@@ -15,7 +15,7 @@ public class activity_ListAnimals extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_animals);
-        animalstorage = AnimalStorage.getInstance();
+       // animalstorage = AnimalStorage.getInstance();
         recyclerView = findViewById(R.id.rvAnimalList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new AnimalListAdapter(getApplicationContext(),animalstorage.getAnimals()));

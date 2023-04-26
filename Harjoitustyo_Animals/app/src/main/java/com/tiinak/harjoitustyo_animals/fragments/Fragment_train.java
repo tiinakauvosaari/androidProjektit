@@ -25,7 +25,8 @@ public class Fragment_train extends Fragment implements AnimalChoiceAdapter.Anim
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-    AnimalStorage animalstorage = AnimalStorage.getInstance();
+    //AnimalStorage animalstorage = AnimalStorage.getInstance();
+    AnimalStorage animalstorage;
     private Context context;
     private AnimalChoiceAdapter adapterChoice;
 

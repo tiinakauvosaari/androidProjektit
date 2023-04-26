@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="290dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="casual"
+        android:text="Lisää uusi eläin peliin"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/rg"
+        android:layout_width="224dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_chainStyle="spread">
+
+
+        <RadioButton
+            android:id="@+id/animal_lion"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:drawableBottom="@drawable/lion"
+            android:text="Leijona" />
+
+        <RadioButton
+            android:id="@+id/animal_crocodile"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:drawableBottom="@drawable/crocodile"
+            android:text="Krokotiili" />
+
+        <RadioButton
+            android:id="@+id/animal_snail"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:drawableBottom="@drawable/snail"
+            android:text="Etana" />
+
+        <RadioButton
+            android:id="@+id/animal_owl"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:drawableBottom="@drawable/owl"
+            android:text="Pöllö" />
+
+        <RadioButton
+            android:id="@+id/animal_mouse"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:drawableBottom="@drawable/mouse"
+            android:text="Hiiri" />
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/addName"
+        android:layout_width="279dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:fontFamily="casual"
+        android:hint="Lisää eläimelle nimi"
+        android:inputType="textPersonName"
+        android:textAlignment="viewStart"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.537"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rg" />
+
+    <Button
+        android:id="@+id/btnAddAnimal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#B9D8AC"
+        android:onClick="addAnimal"
+        android:text="Lisää eläin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addName"
+        app:layout_constraintVertical_bias="0.077"
+        app:strokeColor="#369A7E" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
