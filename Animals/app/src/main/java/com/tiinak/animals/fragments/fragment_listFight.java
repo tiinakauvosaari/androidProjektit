@@ -33,10 +33,11 @@ public class fragment_listFight extends Fragment {
         ) {
 
             View view = inflater.inflate(R.layout.fragment_list_fight, container, false);
-            recyclerView = view.findViewById(R.id.recycleviewHome);
+            recyclerView = view.findViewById(R.id.recycleviewFight);
             recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-            recyclerView.setAdapter(new AnimalListAdapter(AnimalStorage.getAnimals(animalsFight)));
+            //recyclerView.setAdapter(new AnimalListAdapter(AnimalStorage.getAnimals()));
+            recyclerView.setAdapter(new AnimalListAdapter(AnimalStorage.getAnimalsFight()));
             return view;
         }
 

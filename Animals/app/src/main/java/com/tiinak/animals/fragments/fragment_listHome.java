@@ -36,7 +36,8 @@ public class fragment_listHome extends Fragment {
         recyclerView = view.findViewById(R.id.recycleviewHome);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        recyclerView.setAdapter(new AnimalListAdapter(AnimalStorage.getAnimals(animalsHome)));
+        //recyclerView.setAdapter(new AnimalListAdapter(AnimalStorage.getAnimalsHome(animalsHome)));
+        recyclerView.setAdapter(new AnimalListAdapter(AnimalStorage.getAnimalsHome()));
         return view;
     }
 

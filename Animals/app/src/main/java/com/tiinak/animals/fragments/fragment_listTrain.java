@@ -33,10 +33,11 @@ public class fragment_listTrain extends Fragment {
         ) {
 
             View view = inflater.inflate(R.layout.fragment_list_train, container, false);
-            recyclerView = view.findViewById(R.id.recycleviewHome);
-           // recyclerView.setHasFixedSize(true);
+            recyclerView = view.findViewById(R.id.recycleviewTrain);
+            recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-            recyclerView.setAdapter(new AnimalListAdapter(AnimalStorage.getAnimals(animalsTrain)));
+            //recyclerView.setAdapter(new AnimalListAdapter(AnimalStorage.getAnimalsTrain()));
+            recyclerView.setAdapter(new AnimalListAdapter(AnimalStorage.getAnimalsTrain()));
             return view;
         }
 
@@ -56,7 +57,7 @@ public class fragment_listTrain extends Fragment {
         }
 
         public int getItemCount() {
-            return 100;
+            return 10;
         }
     }
 

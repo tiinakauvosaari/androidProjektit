@@ -1,6 +1,6 @@
 package com.tiinak.animals;
 
-public class BattleField extends AnimalStorage{
+public class BattleField extends AnimalStorage implements Cloneable{
 
 
 

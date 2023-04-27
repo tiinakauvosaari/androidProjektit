@@ -43,7 +43,6 @@ public class AnimalListAdapter extends RecyclerView.Adapter<AnimalViewHolder> {
 
     @Override
     public int getItemCount() {
-
         return animals.size();
     }
 

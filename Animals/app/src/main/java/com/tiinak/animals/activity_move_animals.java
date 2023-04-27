@@ -15,113 +15,93 @@ import java.util.ArrayList;
 public class activity_move_animals extends AppCompatActivity {
 
 
-        private ArrayList<Animal> animalmove = new ArrayList<>();
-        public ArrayList<Animal> animalstrain;
-        public ArrayList<Animal> animals;
-        protected Button btnTrain;
-        protected RecyclerView recyclerView;
-        protected RadioGroup rg;
+    private ArrayList<Animal> animalmove = new ArrayList<>();
+    public ArrayList<Animal> animalstrain;
+    public ArrayList<Animal> animals;
+    protected Button btnTrain;
+    protected RecyclerView recyclerView;
+    protected RadioGroup rg;
 
-        public int selectedAnimal;
+    public int selectedAnimal;
 
-        ItemClickListener itemClickListener;
-        AnimalChoiceAdapter animalChoiceAdapter;
-        protected int postion;
+    ItemClickListener itemClickListener;
+    AnimalChoiceAdapter animalChoiceAdapter;
+    protected int postion;
 
-        private Context context;
-       // private AnimalChoiceAdapter adapterChoice;
+    private Context context;
+    // private AnimalChoiceAdapter adapterChoice;
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_move_animals);
-            recyclerView = findViewById(R.id.recycleview);
-            btnTrain = findViewById(R.id.btnTrain);
-            rg = findViewById(R.id.radioGroup);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_move_animals);
+        recyclerView = findViewById(R.id.recycleview);
+        btnTrain = findViewById(R.id.btnTrain);
+        rg = findViewById(R.id.radioGroup);
 
-            itemClickListener = new ItemClickListener() {
-                @Override
-                public void onClick(String s) {
-                }
-                @Override
-                public void selectAnimal(Animal animal) {
-                    animalmove.add(animal);
-                    Toast
-                            .makeText(getApplicationContext(), "Selected " + animal.getName(),
-                                           Toast.LENGTH_SHORT)
-                                   .show();
-                }
-               };
-
-
-           // itemClickListener = new ItemClickListener(){
-             //   public void onClick(Animal animal){
-                   // animalmove.add(animal);
-                    //recyclerView.post(new Runnable(){
-                     //   @Override
-                     //   public void run(){
-                     //       animalChoiceAdapter.notifyDataSetChanged();
-                    //    }
-
-                   // });
-            //        Toast
-            //                .makeText(getApplicationContext(), "Selected ",
-            //                        Toast.LENGTH_SHORT)
-            //                .show();
-            //    }  };
-
-            recyclerView.setLayoutManager(new LinearLayoutManager(this));
-            animalChoiceAdapter = new AnimalChoiceAdapter(AnimalStorage.getAnimals(animals),itemClickListener);
-            // recyclerView.setAdapter(new AnimalChoiceAdapter(AnimalStorage.getAnimals(animals), itemClickListener));
-            recyclerView.setAdapter(animalChoiceAdapter);
-            btnTrain.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-
-                     //Valittu olio
-
-
-                    switch (rg.getCheckedRadioButtonId()) {
-                        case R.id.rbHome:
-
-                                    // valittu olio siirretään kotiin
-                            Toast
-                                    .makeText(getApplicationContext(), "Home selected",
-                                            Toast.LENGTH_SHORT)
-                                            .show();
-                                    break;
-
-                       case R.id.rbTrain:
-                                    //AnimalStorage.addAnimaltrain(animal);
-                                    Toast
-                                            .makeText(getApplicationContext(), "Train selected",
-                                                    Toast.LENGTH_SHORT)
-                                            .show();
-                                    break;
-                                case R.id.rbFight:
-                                    // Fight
-                                    Toast
-                                            .makeText(getApplicationContext(), "Fight selected",
-                                                    Toast.LENGTH_SHORT)
-                                            .show();
-                                    break;
-                                default:
-                                    Toast
-                                            .makeText(getApplicationContext(), "Valitse minne siirretäänh",
-                                                    Toast.LENGTH_SHORT)
-                                            .show();
-                                    break;
-                            }
-            }}); }; //btnListener
-
-           // public void setWhenClickListener(ItemClickListener itemClickListener){
-           //         this.listener = listener;
-          //          }
-
-
+        itemClickListener = new ItemClickListener() {
+            @Override
+            public void onClick(String s) {
+                System.out.println(s);
+                Toast
+                        .makeText(getApplicationContext(), "Selected " + s,
+                                Toast.LENGTH_SHORT)
+                        .show();
             }
+            @Override
+            public void selectAnimal(Animal animal) {
+                animalmove.add(animal);
+                System.out.println(animal.getName());
+                //AnimalStorage.addAnimalHome(animal);
+                Toast
+                        .makeText(getApplicationContext(), "Selected " + animal.getName(),
+                                Toast.LENGTH_SHORT)
+                        .show();
+            }
+        };
 
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        animalChoiceAdapter = new AnimalChoiceAdapter(AnimalStorage.getAnimals(), itemClickListener);
+        // recyclerView.setAdapter(new AnimalChoiceAdapter(AnimalStorage.getAnimals(animals), itemClickListener));
+        recyclerView.setAdapter(animalChoiceAdapter);
+        btnTrain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-            //   Intent intent = new Intent(this, activity_move_animals.class);
-            //   startActivity(intent);
+                switch (rg.getCheckedRadioButtonId()) {
+                    case R.id.rbHome:
+                        System.out.println(animalmove.get(0));
+                        AnimalStorage.removeFromList(animalmove.get(0));
+                        Animal a = animalmove.get(0);
+                        AnimalStorage.addAnimalHome(a);
+                        break;
+
+                    case R.id.rbTrain:
+                        System.out.println("Aluksi olio on : " + animalmove.get(0));
+                        AnimalStorage.removeFromList(animalmove.get(0));
+                        Animal b = animalmove.get(0);
+                        System.out.println("Nyt on uusi olio " + b);
+                        AnimalStorage.addAnimalTrain(b);
+                        System.out.println(AnimalStorage.getAnimalsTrain());
+                        break;
+
+                    case R.id.rbFight:
+                        AnimalStorage.removeFromList(animalmove.get(0));
+                        Animal c = animalmove.get(0);
+                        AnimalStorage.addAnimalFight(c);
+                        System.out.println(animalmove.get(0));
+                        System.out.println(AnimalStorage.getAnimalsFight());
+                        break;
+                    default:
+                        Toast
+                                .makeText(getApplicationContext(), "Valitse minne siirretäänh",
+                                        Toast.LENGTH_SHORT)
+                                .show();
+                        break;
+                       }
+                    rg.clearCheck();
+            }
+        });
+    }
+}
 

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -43,34 +44,18 @@ public class AnimalChoiceAdapter extends RecyclerView.Adapter<AnimalChoiceHolder
                             CompoundButton compoundButton,
                             boolean b)
                     {
-                        // check condition
-                        if (b) {
-                            // When checked
-                            // update selected position
+                          if (b) {
                             selectedPosition = holder.getAdapterPosition();
-                            // Call listener
-                            itemClickListener.onClick(holder.radiobutton.getText()
-                                    .toString());
+
                             itemClickListener.selectAnimal(animals.get(selectedPosition));
+                              itemClickListener.onClick(holder.radiobutton.getText()
+                                      .toString());
+
+
 ;                        }
                     }
                 });
-
     }
-
-
-         /*   holder.radiobutton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    animalCheckChanged(view);
-                }
-            });
-        }
-
-        private void animalCheckChanged(View view) {
-            selectedPosition = (Integer)view.getTag();
-            notifyDataSetChanged();
-        } */
 
         @Override
         public long getItemId (int position){
