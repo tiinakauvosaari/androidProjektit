@@ -22,6 +22,8 @@ import java.util.ArrayList;
 
 public class fragment_listHome extends Fragment {
 
+    //AnimalStorage animalStorage = AnimalStorage.getInstance();
+
     public ArrayList<Animal> animalsHome;
     private RecyclerView recyclerView;
 

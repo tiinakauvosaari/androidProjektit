@@ -53,6 +53,32 @@ public class Animal implements Serializable {
                 }
             }
 
+    public Animal(Animal animal) {
+        this.name = animal.name;
+        this.species = animal.species;
+        this.attack = animal.attack;
+        this.defence = animal.defence;
+        this.maxHealth = animal.maxHealth;
+        this.practise = 0;
+        this.attacksNumber = 0;
+        this.winningsNumber = 0;
+        this.id = animal.id;
+
+        if (species.equals("lion")) {
+            image = R.drawable.lion;
+        } else if (species.equals("mouse")) {
+            image = R.drawable.mouse;
+        } else if (species.equals("owl")) {
+            image = R.drawable.owl;
+        } else if (species.equals("rhino")) {
+            image = R.drawable.rhino;
+        } else if (species.equals("snail")) {
+            image = R.drawable.snail;
+        } else if (species.equals("crocodile")) {
+            image = R.drawable.crocodile;
+        }
+    }
+
     public String getName() {
                 return name;
             }
@@ -96,6 +122,4 @@ public class Animal implements Serializable {
     static int idCounter(){
                 return count++;
             }
-
-
 }

@@ -24,6 +24,7 @@ public class AnimalChoiceAdapter extends RecyclerView.Adapter<AnimalChoiceHolder
         this.itemClickListener = itemClickListener;
     }
 
+
     @NonNull
     @Override
     public AnimalChoiceHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -36,9 +37,7 @@ public class AnimalChoiceAdapter extends RecyclerView.Adapter<AnimalChoiceHolder
     public void onBindViewHolder(@NonNull AnimalChoiceHolder holder, final int position) {
         holder.radiobutton.setText(animals.get(position).getName() + " (" + animals.get(position).getSpecies() + ")");
         holder.radiobutton.setChecked(position == selectedPosition);
-        holder.radiobutton.setTag(position);
-        holder.radiobutton.setOnCheckedChangeListener(
-                new CompoundButton.OnCheckedChangeListener() {
+        holder.radiobutton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(
                             CompoundButton compoundButton,
@@ -46,16 +45,16 @@ public class AnimalChoiceAdapter extends RecyclerView.Adapter<AnimalChoiceHolder
                     {
                           if (b) {
                             selectedPosition = holder.getAdapterPosition();
-
                             itemClickListener.selectAnimal(animals.get(selectedPosition));
-                              itemClickListener.onClick(holder.radiobutton.getText()
+                            itemClickListener.onClick(holder.radiobutton.getText()
                                       .toString());
-
-
 ;                        }
+                          else{
+                              selectedPosition = -1;
+                          }
                     }
                 });
-    }
+              }
 
         @Override
         public long getItemId (int position){
@@ -66,7 +65,6 @@ public class AnimalChoiceAdapter extends RecyclerView.Adapter<AnimalChoiceHolder
         public int getItemViewType (int position){
             return position;
         }
-
 
     @Override
     public int getItemCount() {

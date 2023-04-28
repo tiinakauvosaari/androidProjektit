@@ -11,10 +11,10 @@ public abstract class AnimalStorage implements Cloneable {
     private static ArrayList<Animal> animalsfight = new ArrayList<>();
 
 
-   public static void addAnimal(Animal animal){
+    public static void addAnimal(Animal animal){
         animalshome.add(animal);
         animals.add(animal);
-   }
+    }
 
     public static void addAnimalHome(Animal animal){
         animalshome.add(animal);
@@ -28,25 +28,25 @@ public abstract class AnimalStorage implements Cloneable {
         animalsfight.add(animal);
     }
 
-  //  public static ArrayList<Animal> getAnimals(ArrayList<Animal> animals) {
- //       return animals;
-  //  }
+    //  public static ArrayList<Animal> getAnimals(ArrayList<Animal> animals) {
+    //       return animals;
+    //  }
 
- //   public static ArrayList<Animal> getAnimalsHome(ArrayList<Animal> animalshome) {
- //       return animalshome;
- //   }
+    //   public static ArrayList<Animal> getAnimalsHome(ArrayList<Animal> animalshome) {
+    //       return animalshome;
+    //   }
 
-  //  public static ArrayList<Animal> getAnimalsTrain(ArrayList<Animal> animalstrain) {
-  //      return animalstrain;
-  //  }
+    //  public static ArrayList<Animal> getAnimalsTrain(ArrayList<Animal> animalstrain) {
+    //      return animalstrain;
+    //  }
 
-  //  public static ArrayList<Animal> getAnimalsFight(ArrayList<Animal> animalsfight) {
- //       return animalsfight;
- //   }
+    //  public static ArrayList<Animal> getAnimalsFight(ArrayList<Animal> animalsfight) {
+    //       return animalsfight;
+    //   }
 
 
     public static ArrayList<Animal> getAnimalsHome() {
-          return animalshome;
+        return animalshome;
     }
     public static ArrayList<Animal> getAnimals() {
         return animals;

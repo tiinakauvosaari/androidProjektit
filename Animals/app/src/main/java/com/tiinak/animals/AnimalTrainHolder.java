@@ -3,14 +3,15 @@ package com.tiinak.animals;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.recyclerview.widget.RecyclerView;
 
-public class AnimalViewHolder extends RecyclerView.ViewHolder{
+public class AnimalTrainHolder extends RecyclerView.ViewHolder{
 
         ImageView image;
         TextView name, species, attack, defense, maxHealth, practise, winningsNumber, attacksNumber, id;
 
-        public AnimalViewHolder(View itemView) {
+        public AnimalTrainHolder(View itemView) {
             super(itemView);
             image = itemView.findViewById(R.id.animal_image);
             name = itemView.findViewById(R.id.nameFight);

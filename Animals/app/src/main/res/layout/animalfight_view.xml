@@ -2,16 +2,16 @@
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="50dp"
     android:layout_marginLeft="8dp"
     android:layout_marginTop="8dp"
     android:layout_marginRight="8dp"
-    android:background="#EDF3B4"
+    android:background="#76DD86"
     android:orientation="horizontal">
 
     <ImageView
-        android:id="@+id/animal_image"
-        android:layout_width="90dp"
+        android:id="@+id/animalFightImage"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         app:srcCompat="@android:drawable/btn_star_big_on" />
@@ -35,6 +35,16 @@
             android:layout_height="wrap_content"
             android:text="attack" />
 
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="130dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
         <TextView
             android:id="@+id/defenceFight"
             android:layout_width="match_parent"
@@ -47,42 +57,6 @@
             android:layout_height="wrap_content"
             android:text="maxHealth" />
 
-        <TextView
-            android:id="@+id/id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Parctis" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="130dp"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/speciesView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="spceies" />
-
-        <TextView
-            android:id="@+id/WinningsNumberView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="WinningsNumber" />
-
-        <TextView
-            android:id="@+id/practisView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Parctis" />
-
-        <TextView
-            android:id="@+id/attackNumberView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="attackNumber" />
 
     </LinearLayout>
 

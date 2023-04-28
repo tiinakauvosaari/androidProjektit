@@ -10,9 +10,9 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    Home home = new Home();
-    BattleField battleField = new BattleField();
-    TrainingArea trainingArea = new TrainingArea();
+  //  Home home = new Home();
+  //  BattleField battleField = new BattleField();
+   // TrainingArea trainingArea = new TrainingArea();
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void switchToMoveAnimals(View view) {
         Intent intent = new Intent(this, activity_move_animals.class);
+        startActivity(intent);
+    }
+
+    public void switchToPractiseAnimals(View view) {
+        Intent intent = new Intent(this, activity_practise_animals.class);
+        startActivity(intent);
+    }
+
+    public void switchToFightAnimals(View view) {
+        Intent intent = new Intent(this, activity_fight_animals.class);
         startActivity(intent);
     }
 

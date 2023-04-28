@@ -12,7 +12,13 @@
         android:theme="@style/Theme.Animals"
         tools:targetApi="31">
         <activity
+            android:name=".activity_fight_animals"
+            android:exported="false" />
+        <activity
             android:name=".activity_move_animals"
+            android:exported="false" />
+        <activity
+            android:name=".activity_practise_animals"
             android:exported="false" />
         <activity
             android:name=".activity_list_animals"

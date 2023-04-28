@@ -13,7 +13,6 @@ import java.util.ArrayList;
 public class AnimalListAdapter extends RecyclerView.Adapter<AnimalViewHolder> {
 
     private final ArrayList<Animal> animals;
-
     public AnimalListAdapter(ArrayList<Animal> animals) {
         this.animals = animals;
     }

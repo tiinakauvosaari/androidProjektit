@@ -19,7 +19,8 @@
         android:textSize="60sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="20dp" />
+        tools:layout_editor_absoluteY="20dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btnCreateNew"
@@ -80,7 +81,7 @@
         android:background="#63B1EA92"
         android:fontFamily="casual"
         android:gravity="center"
-        android:onClick="switchToStart"
+        android:onClick="switchToPractiseAnimals"
         android:text="Harjoittele"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -97,8 +98,8 @@
         android:background="#63B1EA92"
         android:fontFamily="casual"
         android:gravity="center"
-        android:onClick="switchToMove"
-        android:text="Pelaa"
+        android:onClick="switchToFightAnimals"
+        android:text="Taistele"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
