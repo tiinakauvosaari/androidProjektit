@@ -1,63 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:layout_marginLeft="8dp"
-    android:layout_marginTop="8dp"
-    android:layout_marginRight="8dp"
-    android:background="#76DD86"
-    android:orientation="horizontal">
+<CheckBox
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fighter"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="3dp"
+    android:textSize ="18sp"
+    android:text="nimi" >
+</CheckBox>
 
-    <ImageView
-        android:id="@+id/animalFightImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
-
-    <LinearLayout
-        android:layout_width="130dp"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/nameFight"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Nimi"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/attackFight"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="attack" />
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="130dp"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-
-
-        <TextView
-            android:id="@+id/defenceFight"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Defence" />
-
-        <TextView
-            android:id="@+id/maxHealthFight"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="maxHealth" />
-
-
-    </LinearLayout>
-
-</androidx.appcompat.widget.LinearLayoutCompat>

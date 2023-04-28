@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/recycleviewFightPage"
             android:layout_marginTop="10dp"
-            android:onClick="moveAnimal"
+            android:onClick="fightAnimal"
             android:text="Aloita taistelu"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

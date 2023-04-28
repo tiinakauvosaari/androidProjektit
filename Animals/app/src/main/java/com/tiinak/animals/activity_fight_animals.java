@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,15 +15,18 @@ import java.util.ArrayList;
 
 public class activity_fight_animals extends AppCompatActivity {
 
+    Context context;
+    FighterListener fighterListener;
+
     private ArrayList<Animal> animalmove = new ArrayList<>();
 
     public ArrayList<Animal> animals;
+    public ArrayList<Animal> animalsmove;
     protected Button btnFight;
     protected RecyclerView recyclerView;
 
     protected TextView text;
 
-    ItemClickListener itemClickListener;
     AnimalFightAdapter animalFightAdapter;
 
 
@@ -33,31 +38,28 @@ public class activity_fight_animals extends AppCompatActivity {
         text = findViewById(R.id.infoFight);
         recyclerView = findViewById(R.id.recycleviewFightPage);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        animalFightAdapter = new AnimalFightAdapter(AnimalStorage.getAnimalsFight(), itemClickListener);
+        animalFightAdapter = new AnimalFightAdapter(context, AnimalStorage.getAnimalsFight(), fighterListener);
         // recyclerView.setAdapter(new AnimalChoiceAdapter(AnimalStorage.getAnimals(animals), itemClickListener));
         recyclerView.setAdapter(animalFightAdapter);
 
-        itemClickListener = new ItemClickListener() {
+        fighterListener = new FighterListener() {
             @Override
-            public void onClick(String s) {
-                animalFightAdapter.notifyDataSetChanged();
-                System.out.println(s);
-                Toast
-                        .makeText(getApplicationContext(), "Selected " + s,
-                                Toast.LENGTH_SHORT)
-                        .show();
-            }
-
-            @Override
-            public void selectAnimal(Animal animal) {
-                // animalmove.add(animal);
-                animalmove.add(animal);
-                System.out.println(animal.getName());
-                Toast
-                        .makeText(getApplicationContext(), "Selected " + animal.getName(),
-                                Toast.LENGTH_SHORT)
-                        .show();
+            public void onFighterChange(ArrayList<Animal> animallist) {
+                animalsmove.add(animallist.get(0));
+              //  animalsmove.add(animallist.get(1));
             }
         };
+
     }
+
+
+       public void fightAnimal(View v){
+
+           System.out.println("Moikka vain!");
+           System.out.println(animalsmove.get(0));
+         //  System.out.println(animalsmove.get(1));
+
+       }
+
+
 }

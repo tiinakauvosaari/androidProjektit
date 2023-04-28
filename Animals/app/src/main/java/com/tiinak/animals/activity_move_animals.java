@@ -15,8 +15,6 @@ import java.util.ArrayList;
 
 public class activity_move_animals extends AppCompatActivity {
 
-  //  private ArrayList<Animal> animalmove = new ArrayList<>();
-
     private Animal animalmove;
 
     public ArrayList<Animal> animals;
@@ -48,7 +46,7 @@ public class activity_move_animals extends AppCompatActivity {
 
             @Override
             public void selectAnimal(Animal animal) {
-               // animalmove.add(animal);
+
                 animalmove = animal;
                 System.out.println(animal.getName());
                 Toast

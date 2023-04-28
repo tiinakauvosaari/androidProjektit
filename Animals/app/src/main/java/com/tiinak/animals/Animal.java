@@ -122,4 +122,8 @@ public class Animal implements Serializable {
     static int idCounter(){
                 return count++;
             }
+
+    public boolean isSelected() {
+        return true;
+    }
 }
