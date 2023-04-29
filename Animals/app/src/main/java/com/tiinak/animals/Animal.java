@@ -126,4 +126,8 @@ public class Animal implements Serializable {
     public boolean isSelected() {
         return true;
     }
+
+    public boolean setSelected(boolean b) {
+        return b;
+    }
 }

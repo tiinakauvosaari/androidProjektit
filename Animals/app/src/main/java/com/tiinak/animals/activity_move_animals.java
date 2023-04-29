@@ -43,10 +43,8 @@ public class activity_move_animals extends AppCompatActivity {
                                 Toast.LENGTH_SHORT)
                         .show();
             }
-
             @Override
             public void selectAnimal(Animal animal) {
-
                 animalmove = animal;
                 System.out.println(animal.getName());
                 Toast
@@ -64,42 +62,25 @@ public class activity_move_animals extends AppCompatActivity {
 
     }
         public void moveAnimal(View v){
-            //@Override
-           // public void onClick(View v) {
 
                 switch (rg.getCheckedRadioButtonId()) {
                     case R.id.rbHome:
-                       // System.out.println(animalmove.get(0));
-                      //  AnimalStorage.removeFromList(animalmove.get(0));
                         AnimalStorage.removeFromList(animalmove);
-                      //  Animal a = Home.createAnimal(new Animal(animalmove.get(0)));
                         Animal a = Home.createAnimal(new Animal(animalmove));
+                        AnimalStorage.addAnimalHome(a);
                         break;
 
                     case R.id.rbTrain:
                         AnimalStorage.removeFromList(animalmove);
-                       // System.out.println("Aluksi olio on : " + animalmove.get(0));
-                      //  AnimalStorage.removeFromList(animalmove.get(0));
-                     //    Animal b = TrainingArea.createAnimal(new Animal(animalmove.get(0)));
-                       // Animal b = new TrainingArea(animalmove.get(0));
-                      //   AnimalStorage.addAnimalTrain(b);
-                      //  System.out.println("Nyt on uusi olio " + b);
-                       // AnimalStorage.addAnimalTrain(b);
                         Animal b = TrainingArea.createAnimal(new Animal(animalmove));
                         AnimalStorage.addAnimalTrain(b);
                         System.out.println(AnimalStorage.getAnimalsTrain());
                         break;
 
                     case R.id.rbFight:
-
+                        AnimalStorage.removeFromList(animalmove);
                         Animal c = TrainingArea.createAnimal(new Animal(animalmove));
                         AnimalStorage.addAnimalFight(c);
-                        //System.out.println(AnimalStorage.getAnimalsFight());
-                   //     System.out.println("Aluksi olio on : " + animalmove.get(0));
-                   //     AnimalStorage.removeFromList(animalmove.get(0));
-                  //      Animal c = BattleField.createAnimal(new Animal(animalmove.get(0)));
-                   //     AnimalStorage.addAnimalFight(c);
-                   //     System.out.println(animalmove.get(0));
                         System.out.println(AnimalStorage.getAnimalsFight());
                         break;
                     default:
@@ -109,12 +90,10 @@ public class activity_move_animals extends AppCompatActivity {
                                 .show();
                         break;
                 }
-                //rg.clearCheck();
                 Intent intent = new Intent(this,MainActivity.class);
                 startActivity(intent);
 
             }
-       // });
     }
 
 

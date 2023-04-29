@@ -38,28 +38,32 @@ public class activity_fight_animals extends AppCompatActivity {
         text = findViewById(R.id.infoFight);
         recyclerView = findViewById(R.id.recycleviewFightPage);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        animalFightAdapter = new AnimalFightAdapter(context, AnimalStorage.getAnimalsFight(), fighterListener);
-        // recyclerView.setAdapter(new AnimalChoiceAdapter(AnimalStorage.getAnimals(animals), itemClickListener));
-        recyclerView.setAdapter(animalFightAdapter);
-
         fighterListener = new FighterListener() {
             @Override
             public void onFighterChange(ArrayList<Animal> animallist) {
-                animalsmove.add(animallist.get(0));
-              //  animalsmove.add(animallist.get(1));
+                animalFightAdapter.notifyDataSetChanged();
+                System.out.println("Heippa täältä onCreatista");
+                animalmove = animallist;
+
             }
         };
-
+        animalFightAdapter = new AnimalFightAdapter(context, AnimalStorage.getAnimalsFight(), fighterListener);
+        // recyclerView.setAdapter(new AnimalChoiceAdapter(AnimalStorage.getAnimals(animals), itemClickListener));
+        recyclerView.setAdapter(animalFightAdapter);
     }
 
 
-       public void fightAnimal(View v){
-
+       public void fightAnimal(View v) {
+           String teksti;
            System.out.println("Moikka vain!");
-           System.out.println(animalsmove.get(0));
-         //  System.out.println(animalsmove.get(1));
+           System.out.println(animalmove.get(0));
+           Animal a = animalmove.get(0);
+           System.out.println(animalmove.get(1));
+           Animal b = animalmove.get(1);
 
-       }
+           teksti = BattleField.fight(a, b);
+           text.setText(teksti);
+    }
 
 
 }
