@@ -22,10 +22,9 @@ public class Animal implements Serializable {
     protected int practise;
     protected int winningsNumber;
     protected int attacksNumber;
+
     protected int id;
     protected int image;
-
-
     static int count = 0;
 
     public Animal(String name, String species, int attack, int defence, int maxHealth) {

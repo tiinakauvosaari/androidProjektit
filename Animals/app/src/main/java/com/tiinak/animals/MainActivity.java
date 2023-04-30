@@ -2,10 +2,15 @@ package com.tiinak.animals;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -41,5 +46,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, activity_fight_animals.class);
         startActivity(intent);
     }
+
+
 
 }

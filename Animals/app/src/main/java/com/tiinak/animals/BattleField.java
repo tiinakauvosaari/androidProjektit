@@ -19,7 +19,7 @@ public class BattleField extends AnimalStorage {
         } else {
 
             while (a.getMaxHealth() > 0 && b.getMaxHealth() > 0) {
-                teksti = teksti + a.getName() + "(A:" + a.getAttack() + ") + hyökkää kohti eläintä " + b.getName() + "(D:" + b.getDefence() + " maxHealt" + b.getMaxHealth() + "\n";
+                teksti = teksti + a.getName() + "(A:" + a.getAttack() + ") + hyökkää kohti eläintä " + b.getName() + "(D:" + b.getDefence() + " maxHealt" + b.getMaxHealth() + ")\n";
                 int b_maxH = b.getMaxHealth() - (a.getAttack() - b.getDefence());
                 b.maxHealth = b_maxH;
                 teksti = teksti + b.getName() + " elämäpisteet ovat nyt  " + b.getMaxHealth() + "\n";
@@ -33,7 +33,7 @@ public class BattleField extends AnimalStorage {
                     teksti = teksti + a.getName() + " voitti." + "\n";
                     teksti = teksti + b.getName() + " hävisi. " + b.getName() + " menetti kaikki elämäpisteet. \n";
                 } else {
-                    teksti = teksti + b.getName() + "(A:" + b.getAttack() + "  ) + hyökkää kohti eläintä " + a.getName() + "(D:" + a.getDefence() + " maxHealt" + a.getMaxHealth() + "\n";
+                    teksti = teksti + b.getName() + "(A:" + b.getAttack() + "  ) + hyökkää kohti eläintä " + a.getName() + "(D:" + a.getDefence() + " maxHealt:" + a.getMaxHealth() + ")\n";
                     int a_maxH = a.getMaxHealth() - (b.getAttack() - a.getDefence());
                     a.maxHealth = a_maxH;
                     teksti = teksti + a.getName() + " defence " + a.getDefence() + " ja maxHealth " + a.getMaxHealth() + "\n";
@@ -46,7 +46,7 @@ public class BattleField extends AnimalStorage {
                         b.winningsNumber += 1;
                         b.maxHealth +=2;
                         teksti = teksti + b.getName() + " voitti." + "\n";
-                        teksti = teksti + b.getName() + " hävisi. " + b.getName() + " menetti kaikki elämäpisteet. \n";
+                        teksti = teksti + a.getName() + " hävisi. " + a.getName() + " menetti kaikki elämäpisteet. \n";
                     }
                 }
             }
