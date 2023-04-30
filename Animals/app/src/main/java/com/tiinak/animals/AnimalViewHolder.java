@@ -8,8 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class AnimalViewHolder extends RecyclerView.ViewHolder{
 
         ImageView image;
-        TextView name, species, attack, defense, maxHealth, practise, winningsNumber, attacksNumber, id;
-
+        TextView name, species, attack, defense, maxHealth, practise, winningsNumber, attacksNumber, id, loses;
         public AnimalViewHolder(View itemView) {
             super(itemView);
             image = itemView.findViewById(R.id.animal_image);
@@ -22,6 +21,7 @@ public class AnimalViewHolder extends RecyclerView.ViewHolder{
             winningsNumber = itemView.findViewById(R.id.WinningsNumberView);
             attacksNumber = itemView.findViewById(R.id.attackNumberView);
             id = itemView.findViewById(R.id.id);
+            loses = itemView.findViewById(R.id.lostNumberView);
         }
     }
 

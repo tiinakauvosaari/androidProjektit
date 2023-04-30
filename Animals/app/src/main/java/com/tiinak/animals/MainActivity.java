@@ -10,9 +10,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-  //  Home home = new Home();
-  //  BattleField battleField = new BattleField();
-   // TrainingArea trainingArea = new TrainingArea();
 
         @Override
         public void onCreate(Bundle savedInstanceState) {

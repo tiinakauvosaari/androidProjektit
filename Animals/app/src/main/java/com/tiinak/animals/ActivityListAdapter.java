@@ -15,7 +15,6 @@ public class ActivityListAdapter extends FragmentStateAdapter {
     public ActivityListAdapter(@NonNull FragmentActivity fragmentActivity) {
             super(fragmentActivity);
         }
-
         @NonNull
         @Override
         public Fragment createFragment(int position) {

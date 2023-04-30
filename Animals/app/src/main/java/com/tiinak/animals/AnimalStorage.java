@@ -28,28 +28,16 @@ public abstract class AnimalStorage implements Cloneable {
         animalsfight.add(animal);
     }
 
-    //  public static ArrayList<Animal> getAnimals(ArrayList<Animal> animals) {
-    //       return animals;
-    //  }
-
-    //   public static ArrayList<Animal> getAnimalsHome(ArrayList<Animal> animalshome) {
-    //       return animalshome;
-    //   }
-
-    //  public static ArrayList<Animal> getAnimalsTrain(ArrayList<Animal> animalstrain) {
-    //      return animalstrain;
-    //  }
-
-    //  public static ArrayList<Animal> getAnimalsFight(ArrayList<Animal> animalsfight) {
-    //       return animalsfight;
-    //   }
-
-
     public static ArrayList<Animal> getAnimalsHome() {
         return animalshome;
     }
     public static ArrayList<Animal> getAnimals() {
-        return animals;
+        //compine three lists first
+        ArrayList<Animal> unionAnimals = new ArrayList<>();
+        unionAnimals.addAll(getAnimalsHome());
+        unionAnimals.addAll(getAnimalsFight());
+        unionAnimals.addAll(getAnimalsTrain());
+        return unionAnimals;
     }
     public static ArrayList<Animal> getAnimalsTrain() {
         return animalstrain;
@@ -59,15 +47,15 @@ public abstract class AnimalStorage implements Cloneable {
     }
 
     public static void removeFromList(Animal animal) {
+
         Iterator ite1 = animalshome.iterator();
         Iterator ite2 = animalstrain.iterator();
-        Iterator ite3 = animalstrain.iterator();
+        Iterator ite3 = animalsfight.iterator();
 
         while (ite1.hasNext()) {
             Object element = ite1.next();
             if (element == animal) {
                 animalshome.remove(animal);
-                System.out.print(element + " Heippa hei " + element);
                 break;
             }
         }
@@ -75,7 +63,6 @@ public abstract class AnimalStorage implements Cloneable {
             Object element = ite2.next();
             if (element == animal) {
                 animalstrain.remove(animal);
-                System.out.print(element + " Heippa hei " + element);
                 break;
             }
             System.out.println();
@@ -84,20 +71,24 @@ public abstract class AnimalStorage implements Cloneable {
             Object element = ite3.next();
             if (element == animal) {
                 animalsfight.remove(animal);
-                System.out.print(element + " Heippa hei " + element);
                 break;
             }
             System.out.println();
         }
     }
-    @Override
-    public AnimalStorage clone() {
-        try {
-            AnimalStorage clone = (AnimalStorage) super.clone();
-            // TODO: copy mutable state here, so the clone can't change the internals of the original
-            return clone;
-        } catch (CloneNotSupportedException e) {
-            throw new AssertionError();
+
+    public static void giveMaxHealth(Animal a) {
+        if (a.getSpecies().equals("lion")) {
+            a.maxHealth = 18;
+        } else if (a.getSpecies().equals("mouse")) {
+            a.maxHealth = 19;
+        } else if (a.getSpecies().equals("owl")) {
+            a.maxHealth = 17;
+        }  else if (a.getSpecies().equals("snail")) {
+            a.maxHealth = 20;
+        } else if (a.getSpecies().equals("crocodile")) {
+            a.maxHealth = 16;
         }
+
     }
 }

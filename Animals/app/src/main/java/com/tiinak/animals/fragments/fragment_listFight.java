@@ -36,7 +36,6 @@ public class fragment_listFight extends Fragment {
             recyclerView = view.findViewById(R.id.recycleviewFight);
             recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-            //recyclerView.setAdapter(new AnimalListAdapter(AnimalStorage.getAnimals()));
             recyclerView.setAdapter(new AnimalListAdapter(AnimalStorage.getAnimalsFight()));
             return view;
         }
@@ -47,17 +46,9 @@ public class fragment_listFight extends Fragment {
 
         @NonNull
         public AnimalViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
             View view = LayoutInflater.from(parent.getContext()).inflate(viewType, parent, false);
             return new AnimalViewHolder(view);
         }
 
-        public void onBindViewHolder(@NonNull AnimalViewHolder holder, int position) {
-            // holder.getView().setText(String.valueOf(random.nextInt()));
-        }
-
-        public int getItemCount() {
-            return 100;
-        }
     }
 

@@ -37,7 +37,6 @@ public class activity_move_animals extends AppCompatActivity {
             @Override
             public void onClick(String s) {
                 animalChoiceAdapter.notifyDataSetChanged();
-                System.out.println(s);
                 Toast
                         .makeText(getApplicationContext(), "Selected " + s,
                                 Toast.LENGTH_SHORT)
@@ -56,9 +55,8 @@ public class activity_move_animals extends AppCompatActivity {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         animalChoiceAdapter = new AnimalChoiceAdapter(AnimalStorage.getAnimals(), itemClickListener);
-        // recyclerView.setAdapter(new AnimalChoiceAdapter(AnimalStorage.getAnimals(animals), itemClickListener));
         recyclerView.setAdapter(animalChoiceAdapter);
-        // btnTrain.setOnClickListener(new View.OnClickListener() {
+
 
     }
         public void moveAnimal(View v){
@@ -67,6 +65,7 @@ public class activity_move_animals extends AppCompatActivity {
                     case R.id.rbHome:
                         AnimalStorage.removeFromList(animalmove);
                         Animal a = Home.createAnimal(new Animal(animalmove));
+                        AnimalStorage.giveMaxHealth(a);
                         AnimalStorage.addAnimalHome(a);
                         break;
 
@@ -79,7 +78,7 @@ public class activity_move_animals extends AppCompatActivity {
 
                     case R.id.rbFight:
                         AnimalStorage.removeFromList(animalmove);
-                        Animal c = TrainingArea.createAnimal(new Animal(animalmove));
+                        Animal c = BattleField.createAnimal(new Animal(animalmove));
                         AnimalStorage.addAnimalFight(c);
                         System.out.println(AnimalStorage.getAnimalsFight());
                         break;

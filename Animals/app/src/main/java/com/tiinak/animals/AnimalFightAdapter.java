@@ -14,7 +14,6 @@ import java.util.ArrayList;
 
 public class AnimalFightAdapter extends RecyclerView.Adapter<AnimalFightHolder>{
 
-    boolean isSelected = false;
     protected ArrayList<Animal> animalfight = new ArrayList<Animal>();
     FighterListener fighterListener;
 
@@ -44,9 +43,8 @@ public class AnimalFightAdapter extends RecyclerView.Adapter<AnimalFightHolder>{
         holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                System.out.println("Klick");
+
                 if(b == true){
-                    System.out.println("Klick true");
                     selectedPosition = holder.getAdapterPosition();
                     System.out.println(animals.get(selectedPosition).getName());
                     animalfight.add(animals.get(selectedPosition));
@@ -54,7 +52,6 @@ public class AnimalFightAdapter extends RecyclerView.Adapter<AnimalFightHolder>{
                 }
                 else{
                     animalfight.remove(animals.get(selectedPosition));
-                    System.out.println("böö");
                 }
              }
         });

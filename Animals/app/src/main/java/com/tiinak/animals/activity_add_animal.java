@@ -59,9 +59,7 @@ public class activity_add_animal extends AppCompatActivity {
                 maxHealth = 20;
                 break;
         }
-        // AnimalStorage.getInstance().addAnimal(new AnimalListAdapter.Animal(nameString, species, attack, defence, maxHealth));
         AnimalStorage.addAnimal(Home.createAnimal(new Animal(nameString, species, attack, defence, maxHealth)));
-        // AnimalStorage.addAnimal(animal);
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
 

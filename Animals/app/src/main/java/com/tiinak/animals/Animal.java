@@ -12,6 +12,8 @@ import java.util.ArrayList;
 
 public class Animal implements Serializable {
 
+    protected int lostNumber;
+
     protected String name;
     protected String species;
     protected int attack;
@@ -23,7 +25,6 @@ public class Animal implements Serializable {
     protected int id;
     protected int image;
 
-    protected int i = 0;
 
     static int count = 0;
 
@@ -36,6 +37,7 @@ public class Animal implements Serializable {
                 this.practise = 0;
                 this.attacksNumber = 0;
                 this.winningsNumber = 0;
+                this.lostNumber = 0;
                 this.id = this.idCounter();
 
                 if (species.equals("lion")) {
@@ -59,9 +61,10 @@ public class Animal implements Serializable {
         this.attack = animal.attack;
         this.defence = animal.defence;
         this.maxHealth = animal.maxHealth;
-        this.practise = 0;
-        this.attacksNumber = 0;
-        this.winningsNumber = 0;
+        this.practise = animal.practise;
+        this.attacksNumber = animal.attacksNumber;
+        this.winningsNumber = animal.winningsNumber;
+        this.lostNumber = animal.lostNumber;
         this.id = animal.id;
 
         if (species.equals("lion")) {
@@ -123,11 +126,7 @@ public class Animal implements Serializable {
                 return count++;
             }
 
-    public boolean isSelected() {
-        return true;
-    }
-
-    public boolean setSelected(boolean b) {
-        return b;
+    public int getLoses() {
+        return lostNumber;
     }
 }

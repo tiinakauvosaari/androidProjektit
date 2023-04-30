@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class AnimalChoiceHolder extends RecyclerView.ViewHolder{
 
-        //TextView name, species;
         RadioButton radiobutton;
         ItemClickListener choice;
 

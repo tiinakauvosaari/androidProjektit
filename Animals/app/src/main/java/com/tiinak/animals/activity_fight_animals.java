@@ -21,7 +21,7 @@ public class activity_fight_animals extends AppCompatActivity {
     private ArrayList<Animal> animalmove = new ArrayList<>();
 
     public ArrayList<Animal> animals;
-    public ArrayList<Animal> animalsmove;
+
     protected Button btnFight;
     protected RecyclerView recyclerView;
 
@@ -42,28 +42,28 @@ public class activity_fight_animals extends AppCompatActivity {
             @Override
             public void onFighterChange(ArrayList<Animal> animallist) {
                 animalFightAdapter.notifyDataSetChanged();
-                System.out.println("Heippa täältä onCreatista");
                 animalmove = animallist;
 
             }
         };
         animalFightAdapter = new AnimalFightAdapter(context, AnimalStorage.getAnimalsFight(), fighterListener);
-        // recyclerView.setAdapter(new AnimalChoiceAdapter(AnimalStorage.getAnimals(animals), itemClickListener));
         recyclerView.setAdapter(animalFightAdapter);
     }
 
 
        public void fightAnimal(View v) {
            String teksti;
-           System.out.println("Moikka vain!");
-           System.out.println(animalmove.get(0));
-           Animal a = animalmove.get(0);
-           System.out.println(animalmove.get(1));
-           Animal b = animalmove.get(1);
-
-           teksti = BattleField.fight(a, b);
-           text.setText(teksti);
-    }
-
+           if (animalmove.size() != 2) {
+               teksti = "Tarvitset kaksi eläintä taisteluun";
+               text.setText(teksti);
+           } else {
+               System.out.println(animalmove.get(0));
+               Animal a = animalmove.get(0);
+               System.out.println(animalmove.get(1));
+               Animal b = animalmove.get(1);
+               teksti = BattleField.fight(a, b);
+               text.setText(teksti);
+           }
+       }
 
 }

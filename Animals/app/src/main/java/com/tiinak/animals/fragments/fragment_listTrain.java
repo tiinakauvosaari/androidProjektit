@@ -36,7 +36,6 @@ public class fragment_listTrain extends Fragment {
             recyclerView = view.findViewById(R.id.recycleviewTrain);
             recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-            //recyclerView.setAdapter(new AnimalListAdapter(AnimalStorage.getAnimalsTrain()));
             recyclerView.setAdapter(new AnimalListAdapter(AnimalStorage.getAnimalsTrain()));
             return view;
         }
@@ -53,7 +52,7 @@ public class fragment_listTrain extends Fragment {
         }
 
         public void onBindViewHolder(@NonNull AnimalViewHolder holder, int position) {
-            // holder.getView().setText(String.valueOf(random.nextInt()));
+
         }
 
         public int getItemCount() {

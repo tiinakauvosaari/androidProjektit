@@ -38,6 +38,8 @@ public class AnimalListAdapter extends RecyclerView.Adapter<AnimalViewHolder> {
         holder.attacksNumber.setText("Attacks: " + animals.get(position).getAttacksNumber());
         holder.id.setText("id: " + animals.get(position).getId());
         holder.image.setImageResource(animals.get(position).getImage());
+        holder.loses.setText("Lost: " + animals.get(position).getLoses());
+
     }
 
     @Override

@@ -22,10 +22,7 @@ import java.util.ArrayList;
 
 public class fragment_listHome extends Fragment {
 
-    //AnimalStorage animalStorage = AnimalStorage.getInstance();
-
-    public ArrayList<Animal> animalsHome;
-    private RecyclerView recyclerView;
+      private RecyclerView recyclerView;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -38,27 +35,8 @@ public class fragment_listHome extends Fragment {
         recyclerView = view.findViewById(R.id.recycleviewHome);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        //recyclerView.setAdapter(new AnimalListAdapter(AnimalStorage.getAnimalsHome(animalsHome)));
         recyclerView.setAdapter(new AnimalListAdapter(AnimalStorage.getAnimalsHome()));
         return view;
     }
 
-    public int getItemViewType(final int position) {
-        return R.layout.animal_view;
-    }
-
-    @NonNull
-    public AnimalViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
-        View view = LayoutInflater.from(parent.getContext()).inflate(viewType, parent, false);
-        return new AnimalViewHolder(view);
-    }
-
-    public void onBindViewHolder(@NonNull AnimalViewHolder holder, int position) {
-        // holder.getView().setText(String.valueOf(random.nextInt()));
-    }
-
-    public int getItemCount() {
-        return 100;
-    }
 }

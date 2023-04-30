@@ -24,12 +24,10 @@ public class AnimalChoiceAdapter extends RecyclerView.Adapter<AnimalChoiceHolder
         this.itemClickListener = itemClickListener;
     }
 
-
     @NonNull
     @Override
     public AnimalChoiceHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.animalchoice_view, parent, false);
-        //return new AnimalChoiceHolder(view,selectedChoice);
         return new AnimalChoiceHolder(view, itemClickListener);
     }
 

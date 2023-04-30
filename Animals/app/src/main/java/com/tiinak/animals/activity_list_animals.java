@@ -26,11 +26,9 @@ public class activity_list_animals extends AppCompatActivity {
             public void onTabSelected(TabLayout.Tab tab) {
                 fragmentarea.setCurrentItem(tab.getPosition());
             }
-
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
             }
-
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
             }
@@ -44,11 +42,6 @@ public class activity_list_animals extends AppCompatActivity {
             }
         });
 
-
-        // FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        //  Fragment fragment;
-        //  ft.replace(R.id.frame, fragment);
-        //  ft.commit();
 
     }}
 
